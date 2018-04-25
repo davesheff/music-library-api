@@ -23,6 +23,10 @@ describe('Artist POST Endpoint', () => {
     });
   });
 
+  afterAll(() => {
+    mongoose.connection.close();
+  });
+
   it('should create a new Artist', (done) => {
     expect.assertions(2);
     const request = httpMocks.createRequest({
